@@ -80,3 +80,4 @@ scikit-learn
 tensorflow
 plotly
 mlxtend
+seaborn
