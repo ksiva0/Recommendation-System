@@ -12,7 +12,7 @@ filterwarnings('ignore')
 # Load data with caching to avoid reloading on every interaction
 @st.cache_data
 def load_data():
-    df = pd.read_excel(r"C:\Users\sivak\Downloads\students_assessment.xlsx", index_col=[0, 1, 2], header=[0, 1])
+    df = pd.read_excel(r"students_assessment.xlsx", index_col=[0, 1, 2], header=[0, 1])
     return df
 
 # Streamlit app code
