@@ -29,17 +29,17 @@ def main():
     df.rename(columns={'level_0': "STUDENT NAME", "level_1": "INDEX NUMBER", "level_2": "TRACK"}, inplace=True)
 
     subjects = {
-        "ENGLISH": ["ENGLISH_PP1_60", "ENGLISH_PP2_80", "ENGLISH_PP3_60", "ENGLISH", "ENGLISH_PTS"],
-        "KISWAHILI": ["KISWAHILI_PP1_40", "KISWAHILI_PP2_80", "KISWAHILI_PP3_80", "KISWAHILI", "KISWAHILI_PTS"],
-        "MATH": ["MATH_PP1_100", "MATH_PP2_100", "MATH", "MATH_PTS"],
-        "BIOLOGY": ["BIOLOGY_PP1_80", "BIOLOGY_PP2_80", "BIOLOGY_PP3_40", "BIOLOGY", "BIOLOGY_PTS"],
-        "PHYSICS": ["PHYSICS_PP1_80", "PHYSICS_PP2_80", "PHYSICS_PP3_40", "PHYSICS", "PHYSICS_PTS"],
-        "CHEMISTRY": ["CHEMISTRY_PP1_80", "CHEMISTRY_PP2_80", "CHEMISTRY_PP3_40", "CHEMISTRY", "CHEMISTRY_PTS"],
-        "HIST": ["HIST_PP1_100", "HIST_PP2_100", "HIST", "HIST_PTS"],
-        "GEO": ["GEO_PP1_100", "GEO_PP2_100", "GEO", "GEO_PTS"],
-        "CRE": ["CRE_PP1_100", "CRE_PP2_100", "CRE", "CRE_PTS"],
-        "C/st": ["C/st_PP1_100", "C/st_PP2_100", "C/st", "C/st_PTS"],
-        "BST": ["BST_PP1_100", "BST_PP2_100", "BST", "BST_PTS"],
+        "ENGLISH": ["ENGLISH_PP1_60", "ENGLISH_PP2_80", "ENGLISH_PP3_60", "ENGLISH_AVE", "ENGLISH_PTS"],
+        "KISWAHILI": ["KISWAHILI_PP1_40", "KISWAHILI_PP2_80", "KISWAHILI_PP3_80", "KISWAHILI_AVE", "KISWAHILI_PTS"],
+        "MATH": ["MATH_PP1_100", "MATH_PP2_100", "MATH_AVE", "MATH_PTS"],
+        "BIOLOGY": ["BIOLOGY_PP1_80", "BIOLOGY_PP2_80", "BIOLOGY_PP3_40", "BIOLOGY_AVE", "BIOLOGY_PTS"],
+        "PHYSICS": ["PHYSICS_PP1_80", "PHYSICS_PP2_80", "PHYSICS_PP3_40", "PHYSICS_AVE", "PHYSICS_PTS"],
+        "CHEMISTRY": ["CHEMISTRY_PP1_80", "CHEMISTRY_PP2_80", "CHEMISTRY_PP3_40", "CHEMISTRY_AVE", "CHEMISTRY_PTS"],
+        "HIST": ["HIST_PP1_100", "HIST_PP2_100", "HIST_AVE", "HIST_PTS"],
+        "GEO": ["GEO_PP1_100", "GEO_PP2_100", "GEO_AVE", "GEO_PTS"],
+        "CRE": ["CRE_PP1_100", "CRE_PP2_100", "CRE_AVE", "CRE_PTS"],
+        "C/st": ["C/st_PP1_100", "C/st_PP2_100", "C/st_AVE", "C/st_PTS"],
+        "BST": ["BST_PP1_100", "BST_PP2_100", "BST_AVE", "BST_PTS"],
     }
 
     for subject, columns in subjects.items():
@@ -61,8 +61,8 @@ def main():
     y = to_categorical(y)
     
     # Prepare the features (subject scores)
-    subject_columns = ['ENGLISH', 'KISWAHILI', 'MATH', 'BIOLOGY', 'PHYSICS', 
-                   'CHEMISTRY', 'HIST', 'GEO', 'CRE', 'C/st', 'BST']
+    subject_columns = ['ENGLISH_AVE', 'KISWAHILI_AVE', 'MATH_AVE', 'BIOLOGY_AVE', 'PHYSICS_AVE', 
+                   'CHEMISTRY_AVE', 'HIST_AVE', 'GEO_AVE', 'CRE_AVE', 'C/st_AVE', 'BST_AVE']
     X = df[subject_columns]
     
     # Define and train the model
