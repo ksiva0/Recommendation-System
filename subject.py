@@ -64,8 +64,8 @@ def main():
     y = to_categorical(y)
     
     # Prepare the features (subject scores)
-    subject_columns = ['ENGLISH_AVE', 'KISWAHILI_AVE', 'MATH_AVE', 'BIOLOGY_AVE', 'PHYSICS_AVE', 
-                   'CHEMISTRY_AVE', 'HIST_AVE', 'GEO_AVE', 'CRE_AVE', 'C/st_AVE', 'BST_AVE']
+    subject_columns = ['ENGLISH', 'KISWAHILI', 'MATH', 'BIOLOGY', 'PHYSICS', 
+                   'CHEMISTRY', 'HISTORY', 'GEOLOGY', 'CRE', 'CST', 'BST']
     X = df[subject_columns]
     
     # Define and train the model
