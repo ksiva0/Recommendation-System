@@ -27,19 +27,22 @@ def main():
     df.columns = [''.join(filter(None, col)).strip() for col in df.columns.values]
     df.reset_index(inplace=True)
     df.rename(columns={'level_0': "STUDENT NAME", "level_1": "INDEX NUMBER", "level_2": "TRACK"}, inplace=True)
+    df.rename(columns={'ENGLISH_AVE':'ENGLISH', 'KISWAHILI_AVE':'KISWAHILI', 'MATH_AVE':'MATH', 'BIOLOGY_AVE':'BIOLOGY', 
+                   'PHYSICS_AVE':'PHYSICS', 'CHEMISTRY_AVE':'CHEMISTRY', 'HIST_AVE':'HISTORY', 'GEO_AVE':'GEOLOGY',
+                  'CRE_AVE':'CRE', 'C/st_AVE':'CST', 'BST_AVE':'BST'}, inplace=True)
 
     subjects = {
-        "ENGLISH": ["ENGLISH_PP1_60", "ENGLISH_PP2_80", "ENGLISH_PP3_60", "ENGLISH_AVE", "ENGLISH_PTS"],
-        "KISWAHILI": ["KISWAHILI_PP1_40", "KISWAHILI_PP2_80", "KISWAHILI_PP3_80", "KISWAHILI_AVE", "KISWAHILI_PTS"],
-        "MATH": ["MATH_PP1_100", "MATH_PP2_100", "MATH_AVE", "MATH_PTS"],
-        "BIOLOGY": ["BIOLOGY_PP1_80", "BIOLOGY_PP2_80", "BIOLOGY_PP3_40", "BIOLOGY_AVE", "BIOLOGY_PTS"],
-        "PHYSICS": ["PHYSICS_PP1_80", "PHYSICS_PP2_80", "PHYSICS_PP3_40", "PHYSICS_AVE", "PHYSICS_PTS"],
-        "CHEMISTRY": ["CHEMISTRY_PP1_80", "CHEMISTRY_PP2_80", "CHEMISTRY_PP3_40", "CHEMISTRY_AVE", "CHEMISTRY_PTS"],
-        "HIST": ["HIST_PP1_100", "HIST_PP2_100", "HIST_AVE", "HIST_PTS"],
-        "GEO": ["GEO_PP1_100", "GEO_PP2_100", "GEO_AVE", "GEO_PTS"],
-        "CRE": ["CRE_PP1_100", "CRE_PP2_100", "CRE_AVE", "CRE_PTS"],
-        "C/st": ["C/st_PP1_100", "C/st_PP2_100", "C/st_AVE", "C/st_PTS"],
-        "BST": ["BST_PP1_100", "BST_PP2_100", "BST_AVE", "BST_PTS"],
+        "ENGLISH": ["ENGLISH_PP1_60", "ENGLISH_PP2_80", "ENGLISH_PP3_60", "ENGLISH", "ENGLISH_PTS"],
+        "KISWAHILI": ["KISWAHILI_PP1_40", "KISWAHILI_PP2_80", "KISWAHILI_PP3_80", "KISWAHILI", "KISWAHILI_PTS"],
+        "MATH": ["MATH_PP1_100", "MATH_PP2_100", "MATH", "MATH_PTS"],
+        "BIOLOGY": ["BIOLOGY_PP1_80", "BIOLOGY_PP2_80", "BIOLOGY_PP3_40", "BIOLOGY", "BIOLOGY_PTS"],
+        "PHYSICS": ["PHYSICS_PP1_80", "PHYSICS_PP2_80", "PHYSICS_PP3_40", "PHYSICS", "PHYSICS_PTS"],
+        "CHEMISTRY": ["CHEMISTRY_PP1_80", "CHEMISTRY_PP2_80", "CHEMISTRY_PP3_40", "CHEMISTRY", "CHEMISTRY_PTS"],
+        "HIST": ["HIST_PP1_100", "HIST_PP2_100", "HISTORY", "HIST_PTS"],
+        "GEO": ["GEO_PP1_100", "GEO_PP2_100", "GEOLOGY", "GEO_PTS"],
+        "CRE": ["CRE_PP1_100", "CRE_PP2_100", "CRE", "CRE_PTS"],
+        "C/st": ["C/st_PP1_100", "C/st_PP2_100", "CST", "C/st_PTS"],
+        "BST": ["BST_PP1_100", "BST_PP2_100", "BST", "BST_PTS"],
     }
 
     for subject, columns in subjects.items():
