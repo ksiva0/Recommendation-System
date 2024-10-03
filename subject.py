@@ -81,9 +81,9 @@ def main():
 
     # Student ID selection and recommendation system
     if 'INDEX NUMBER' in df.columns:
-        st.write("Student IDs available for selection:")
+        #st.write("Student IDs available for selection:")
         st.write(df['INDEX NUMBER'].unique())
-        student_id = None  # Not selecting a student ID
+    
     else:
         st.write("No student IDs available.")
     threshold = st.slider("Select the threshold for subject improvement", 0, 100, 50)
