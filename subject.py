@@ -82,7 +82,7 @@ def main():
     # Student ID selection and recommendation system
 
     #st.write("Student IDs available for selection:")
-    st.write(df['INDEX NUMBER'].unique())
+    student_id = st.write(df['INDEX NUMBER'].unique())
     threshold = st.slider("Select the threshold for subject improvement", 0, 100, 50)
 
     if st.button("Get Recommendation"):
