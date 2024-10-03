@@ -82,7 +82,7 @@ def main():
     # Student ID selection and recommendation system
 
     student_id = st.selectbox("Select Student ID", df['INDEX NUMBER'].unique())
-    threshold = st.write("Select the threshold for subject improvement", 0, 100)
+    threshold = st.slider("Select the threshold for subject improvement", 0, 100)
 
     if st.button("Get Recommendation"):
         recommend_subjects(student_id, threshold, df, subject_columns, model, label_encoder)
