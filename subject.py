@@ -80,7 +80,12 @@ def main():
     model.fit(X, y, epochs=150, batch_size=32, verbose=0)
 
     # Student ID selection and recommendation system
-    student_id = st.selectbox("Select Student ID", df['INDEX NUMBER'].unique())
+    if 'INDEX NUMBER' in df.columns:
+    st.write("Student IDs available for selection:")
+    st.write(df['INDEX NUMBER'].unique())
+    student_id = None  # Not selecting a student ID
+else:
+    st.write("No student IDs available.")
     threshold = st.slider("Select the threshold for subject improvement", 0, 100, 50)
 
     if st.button("Get Recommendation"):
