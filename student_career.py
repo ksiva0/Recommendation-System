@@ -13,7 +13,7 @@ filterwarnings('ignore')
 
 @st.cache_data
 def load_data():
-    df = pd.read_excel(r"student-scores.csv")
+    df = pd.read_csv(r"student-scores.csv")
     return df
 
 # Main Streamlit app
