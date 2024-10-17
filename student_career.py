@@ -56,6 +56,7 @@ def main():
     ax.set_title("Career Aspiration Counts")
     ax.set_xlabel("Career Aspiration")
     ax.set_ylabel("Count")
+    ax.set_xticks(rotation=45)
     st.pyplot(fig)
 
     # Model architecture
