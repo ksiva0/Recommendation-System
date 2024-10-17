@@ -51,7 +51,7 @@ def main():
 
     # Display career aspiration distribution
     st.subheader("Career Aspiration Distribution")
-    fig, ax = plt.subplots(figsize=(10, 6))
+    fig, ax = plt.subplots(figsize=(20, 6))
     sns.countplot(x='career_aspiration', data=df, palette='viridis')
     ax.set_title("Career Aspiration Counts")
     ax.set_xlabel("Career Aspiration")
